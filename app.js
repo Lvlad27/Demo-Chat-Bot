@@ -12,4 +12,10 @@ app.get('/demo', (req, res) => {
   res.send('I prefer coffee');
 });
 
+app.get('/test', (req, res) => {
+  res.set('X-full-stack', '4life');
+  res.status(418);
+  res.send('Test');
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
