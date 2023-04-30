@@ -6,13 +6,10 @@ app.get('/', (req, res) => {
   res.send('Hello Vlad!');
 });
 
-app.get('/exercise', (req, res) => {
-  res
-    .status(418)
-    .set({
-      'X-Vlad-Header': 'Test exercise',
-    })
-    .send('This is an exercise');
+app.get('/demo', (req, res) => {
+  res.set('X-full-stack', '4life');
+  res.status(418);
+  res.send('I prefer coffee');
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
