@@ -1,0 +1,45 @@
+const webSocketOutput = document.querySelector('.output');
+const inputBtn = document.querySelector('.input-box');
+
+let ws;
+try {
+  if (['localhost', '127.0.0.1', ''].includes(location.hostname)) {
+    ws = new WebSocket('ws://localhost:3000');
+  } else {
+    ws = new WebSocket('ws://lvlad.dev');
+  }
+} catch (error) {
+  console.log('Web Socket init error', error);
+}
+
+function sendQuery(query) {
+  ws.send(JSON.stringify({ type: 'query', payload: query }));
+}
+
+inputBtn.addEventListener('keyup', function (event) {
+  if (event.key === 'Enter') {
+    const query = event.target.value;
+    event.target.value = '';
+    sendQuery(query);
+  }
+});
+
+ws.onmessage = function ({ data }) {
+  const msg = document.createElement('div');
+
+  try {
+    data = JSON.parse(data);
+    const { type, payload } = data;
+
+    switch (type) {
+      case 'ping':
+        // console.log('ping');
+        return;
+      default:
+        msg.innerHTML = payload;
+        webSocketOutput.prepend(msg);
+    }
+  } catch (error) {
+    console.log('Websocket error', error);
+  }
+};
