@@ -6,7 +6,7 @@ try {
   if (['localhost', '127.0.0.1', ''].includes(location.hostname)) {
     ws = new WebSocket('ws://localhost:3000');
   } else {
-    ws = new WebSocket('ws://lvlad.dev');
+    ws = new WebSocket('wss://lvlad.dev');
   }
 } catch (error) {
   console.log('Web Socket init error', error);
