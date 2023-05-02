@@ -22,16 +22,19 @@ This is a simple chatbot project built using Node.js, Express, WebSockets (ws li
 
 ```bash
 git clone https://github.com/yourusername/chatbot.git
+```
 
 2. Change into the project directory
 
 ```bash
 cd chatbot
+```
 
 3. Install the required dependencies
 
 ```bash
 npm install
+```
 
 4. Make sure you have Nginx configured with SSL/TLS certificates and the WebSocket proxy configuration.
 
@@ -39,6 +42,7 @@ npm install
 
 ```bash
 pm2 start app.js
+```
 
 ## Usage
 
@@ -46,6 +50,6 @@ pm2 start app.js
 2. Start chatting with the chatbot by typing your message and pressing the Enter key.
 3. The chatbot will respond in real-time.
 
-License
-This project is for learning purposes only. Feel free to use, modify, or distribute the code as needed.
+## License
 
+This project is for learning purposes only. Feel free to use, modify, or distribute the code as needed.
