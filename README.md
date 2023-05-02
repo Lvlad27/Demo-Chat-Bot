@@ -2,6 +2,8 @@
 
 This is a simple chatbot project built using Node.js, Express, WebSockets (ws library), and Nginx. The project was created for learning purposes.
 
+Check it out at [lvlad.dev](https://lvlad.dev)
+
 ## Table of Contents
 
 - [Features](#features)
